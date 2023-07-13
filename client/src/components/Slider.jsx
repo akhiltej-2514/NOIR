@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -80,6 +81,14 @@ const Button = styled.button`
 `;
 
 const Slider = () => {
+
+  const handleButtonClick = () => {
+    // Scroll down by 1000 pixels
+    window.scrollTo({
+      top: 800,
+      behavior: 'smooth',
+    });}
+
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -88,6 +97,7 @@ const Slider = () => {
       setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
   };
+
 
   return (
     <Container>
@@ -103,7 +113,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button  onClick={handleButtonClick}>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}

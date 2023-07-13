@@ -5,13 +5,14 @@ import {
   Phone,
   Pinterest,
   Room,
-  Twitter,
-} from "@material-ui/icons";
+  Twitter,} from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
+
 const Container = styled.div`
   display: flex;
+  background-color: #f5fafa;
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -132,6 +133,7 @@ const Footer = () => {
         <ContactItem>
           <MailOutline style={{marginRight:"10px"}} /> contact@noir.fashion
         </ContactItem>
+
       </Right>
     </Container>
   );

@@ -116,14 +116,13 @@ const Navbar = () => {
       <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>LAMA.</Logo>
+          <Logo>N O I R</Logo>
         </Center>
         <Right>
         <Link to="/register" style={{ textDecoration: 'none', color: 'black' }}>

@@ -14,14 +14,14 @@ const Container = styled.div`
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  const BASE_URL = 'https://noirapi.onrender.com/api/';
   useEffect(() => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
           cat
-            ? `http://localhost:5000/api/products?category=${cat}`
-            : "http://localhost:5000/api/products"
+            ? `${BASE_URL}products?category=${cat}`
+            : `${BASE_URL}products`
         );
         setProducts(res.data);
       } catch (err) {}
