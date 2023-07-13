@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "dev": "nodemon index.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "babel src -d dist",
   },
   "keywords": [],
   "author": "",
