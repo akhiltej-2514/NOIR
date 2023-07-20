@@ -132,7 +132,7 @@ export default function Register() {
       };
       try {
         console.log(user);
-        await axios.post("http://localhost:5000/api/auth/register", user);
+        await axios.post("https://noirapi.onrender.com/api/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);

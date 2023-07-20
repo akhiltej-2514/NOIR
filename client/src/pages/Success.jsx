@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { userRequest } from "../requestMethods";
 import { Link } from "react-router-dom";
+import Wave from "../components/wave";
 
 
 const Success = () => {
   const location = useLocation();
+  const user = useSelector((state) => state.user.currentUser);
   //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
   const data = location.state.stripeData;
   const cart = location.state.cart;
@@ -43,7 +45,8 @@ const Success = () => {
     >
       {orderId
         ? `Order has been created successfully. Your order number is ${orderId}`
-        : `Successfull. Your order is being prepared...`}
+        : `Successfull. Your order is being prepared...`}<br/>
+         Happy Shopping { user.username} <Wave/>!
       <Link to="/">
       <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
       </Link>

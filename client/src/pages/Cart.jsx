@@ -228,7 +228,7 @@ const Cart = () => {
           <TopButton>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag({cart.quantity})</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton onClick={delClick} type="filled"> DELETE CART</TopButton>
@@ -316,7 +316,7 @@ const Cart = () => {
             </SummaryItem>
             <StripeCheckout
               name="Noir"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              image="https://cdn-icons-png.flaticon.com/512/1019/1019607.png"
               billingAddress
               shippingAddress
               description={`Your total is $${+fine(cart.total)}`}

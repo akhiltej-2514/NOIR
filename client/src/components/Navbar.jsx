@@ -9,6 +9,7 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { lgout } from "../redux/apiCalls";
+import Wave from "./wave";
 
 const Container = styled.div`
   height: 60px;
@@ -85,10 +86,6 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
         </Left>
         <Center>
           <Logo>N O I R</Logo>
@@ -116,15 +113,12 @@ const Navbar = () => {
       <Container>
       <Wrapper>
         <Left>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
         </Left>
         <Center>
           <Logo>N O I R</Logo>
         </Center>
         <Right>
+        <MenuItem style={{ textDecoration: 'none', color: 'black' }}>{user.username}</MenuItem>
         <Link to="/register" style={{ textDecoration: 'none', color: 'black' }}>
               <MenuItem style={{ textDecoration: 'none', color: 'black' }}>REGISTER </MenuItem>
          </Link>
