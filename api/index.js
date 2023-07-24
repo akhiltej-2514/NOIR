@@ -13,6 +13,9 @@ const cors = require("cors");
 const morgan = require("morgan");
 const rfs = require("rotating-file-stream");
 const path = require("path");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
+
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -21,9 +24,10 @@ mongoose
     console.log(err);
   });
 
+
 const accessLogStream = rfs.createStream("access.log", {
     interval: "1h",
-    path: path.join(__dirname, "/logs"),
+    path: path.join("/logs"),
 });
   
   
